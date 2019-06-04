@@ -1,2 +1,2 @@
 # REST_API
-first service creation
+Service for Bookmarking your current location.

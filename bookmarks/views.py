@@ -14,7 +14,7 @@ class IsPremiumUser(permissions.BasePermission):
     message = "Only Premium users may access this resource."
 
     def has_permission(self, request: HttpRequest, view: View):
-        # return request.user.has_perm('appname.permname')  # Django ACL Perms
+       
         return request.user.premium
 
     def has_object_permission(self, request: HttpRequest, view: View, obj):
@@ -27,7 +27,6 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
         return  # To not perform the csrf check previously happening
 
 
-# curl -v --cookie "sessionid=e0rje2u3h1uc1ga61ax5fqom9ra29lhq" http://127.0.0.1:8000/api/bookmarks.json
 class BookmarksViewSet(DestroyModelMixin,
                        RetrieveModelMixin,
                        ListModelMixin,

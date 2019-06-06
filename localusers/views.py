@@ -9,15 +9,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def api_login(request):
-    """
-    CSRF exempt login for REST API clients
-
-    :param request:
-    :return:
-    """
-    # Take username/password form variables,
-    # validate them
-    # create session
+   
+   
     user = authenticate(username=request.POST['username'], password=request.POST['password'])
 
     if user is None:
@@ -31,11 +24,6 @@ def api_login(request):
 
 @csrf_exempt
 def api_logout(request):
-    """
-    CSRF exempt login for REST API clients
-
-    :param request:
-    :return:
-    """
+   
     logout(request)
     return HttpResponse('Success')

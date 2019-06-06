@@ -59,32 +59,11 @@ class GroupPermissionViewSet(viewsets.ModelViewSet):
     queryset = Permission.objects.all()
     serializer_class = GroupPermissionSerializer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 router.register(r'bookmarks', bookmarks.views.BookmarksViewSet)
 router.register(r'permissions', GroupPermissionViewSet)
-
-
-
-
-
-
-
-
 
 
 
